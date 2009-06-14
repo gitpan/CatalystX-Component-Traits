@@ -14,11 +14,11 @@ Catalyst Components
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION   = '0.01';
+our $VERSION   = '0.02';
 our $AUTHORITY = 'id:RKITOVER';
 
 =head1 SYNOPSIS
@@ -74,7 +74,7 @@ The package search order for C<Foo> will be:
 
 =cut
 
-has '_trait_namespace' => (default => '+Trait');
+has '_trait_namespace' => (is => 'ro', default => '+Trait');
 
 sub COMPONENT {
     my ($class, $app, $args) = @_;
@@ -109,11 +109,12 @@ sub _trait_search_order {
     my $parent_idx    = firstidx { /^Catalyst::/ } @search_ns;
     my $parent        = $search_ns[$parent_idx];
     my ($parent_name) = $parent =~ /^Catalyst::(.*)/;
+    my ($parent_part) = $parent =~ /^Catalyst::([^:]+)/;
 
     my @res;
 
     for my $ns (@search_ns[0 .. $parent_idx]) {
-	my ($part) = $ns =~ /^([^:]+)/;
+	my ($part) = $ns =~ /^(.+?)::$parent_part/;
 	push @res, "${part}::${base}For::${parent_name}::$name";
 	last if $part eq 'Catalyst';
     }
