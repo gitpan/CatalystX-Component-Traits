@@ -21,7 +21,7 @@ no_index:
 provides:
   CatalystX::Component::Traits:
     file: lib/CatalystX/Component/Traits.pm
-    version: 0.03
+    version: 0.04
 requires:
   Catalyst::Runtime: 5.80005
   List::MoreUtils: 0
@@ -30,4 +30,5 @@ requires:
   namespace::autoclean: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+  repository: git://github.com/rkitover/catalystx-component-traits.git
+version: 0.04

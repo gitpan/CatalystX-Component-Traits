@@ -18,4 +18,5 @@ README
 t/00-load.t
 t/01-basic.t
 t/02-trait_search.t
+t/03-cx_trait_search.t
 t/pod.t
