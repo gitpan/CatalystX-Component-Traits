@@ -14,11 +14,11 @@ Catalyst Components
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION   = '0.04';
+our $VERSION   = '0.05';
 our $AUTHORITY = 'id:RKITOVER';
 
 =head1 SYNOPSIS
@@ -33,7 +33,7 @@ our $AUTHORITY = 'id:RKITOVER';
 
     __PACKAGE__->config('Model::MyModel' => {
         traits => ['SearchedForTrait', '+Fully::Qualified::Trait']
-    });    
+    });
 
 =head1 DESCRIPTION
 
@@ -76,7 +76,7 @@ For:
     Catalyst::Controller
     Catalyst::Model
     Catalyst::Component
-    Moose::Object 
+    Moose::Object
 
 With:
 
@@ -99,13 +99,13 @@ sub COMPONENT {
     $args = $class->merge_config_hashes($class->config, $args);
 
     if (my $traits = delete $args->{traits}) {
-	return $class->new_with_traits({
-	    traits => $traits,
-	    %$args
-	});
+	    return $class->new_with_traits( $app, {
+	        traits => $traits,
+	        %$args
+	    });
     }
 
-    return $class->new($args);
+    return $class->new($app, $args);
 }
 
 sub _find_trait {
@@ -152,7 +152,7 @@ sub _trait_search_order {
 #
 #	# no non-core crap in the Moose:: namespace
 #	$part = 'MooseX' if $part eq 'Moose';
-#	
+#
 #	push @res, "${part}::${base}For::${rest}::$name";
 #    }
 #
