@@ -15,11 +15,11 @@ Catalyst Components
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION   = '0.07';
+our $VERSION   = '0.08';
 our $AUTHORITY = 'id:RKITOVER';
 
 =head1 SYNOPSIS
@@ -189,11 +189,13 @@ sub _merge_traits {
 sub _find_trait {
     my ($class, $base, $name) = @_;
 
+    my @tried; # FIXME - This sux, use load_first_existing_class ?
     for my $trait ($class->_trait_search_order($base, $name)) {
+        push @tried, $trait;
         return $trait if eval { Class::MOP::load_class($trait) };
     }
 
-    croak "Could not find a class for trait: $name";
+    croak "Could not find a class for trait: $name (tried " . join(',', @tried) . ")";
 }
 
 sub _trait_search_order {
