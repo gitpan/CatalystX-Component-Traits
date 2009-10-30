@@ -21,4 +21,5 @@ t/02-trait_search.t
 t/03-cx_trait_search.t
 t/03-methodattributes.t
 t/04-no_merge.t
+t/05-app_named_cx.t
 t/pod.t
