@@ -23,4 +23,5 @@ t/03-methodattributes.t
 t/04-no_merge.t
 t/05-app_named_cx.t
 t/06-app_root_component.t
+t/07-merge-single.t
 t/pod.t
