@@ -1,7 +1,8 @@
 ---
 abstract: 'Automatic Trait Loading and Resolution for'
 author:
-  - 'Rafael Kitover <rkitover@cpan.org>'
+  - 'Rafael Kitover, C<< <rkitover@cpan.org> >>'
+  - 'Rafael Kitover <bobtfish@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
   Module::Pluggable: 3.9
@@ -9,7 +10,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.91'
+generated_by: 'Module::Install version 0.99'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -26,10 +27,12 @@ provides:
 requires:
   Catalyst::Runtime: 5.80005
   List::MoreUtils: 0
+  Module::Pluggable: 3.9
   MooseX::Traits::Pluggable: 0.08
   Scalar::Util: 0
+  Test::More: 0.88
   namespace::autoclean: 0
 resources:
   license: http://dev.perl.org/licenses/
-  repository: git://github.com/rkitover/catalystx-component-traits.git
+  repository: git://github.com/bobtfish/catalystx-component-traits.git
 version: 0.14
