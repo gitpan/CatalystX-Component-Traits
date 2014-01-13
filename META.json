@@ -1,5 +1,5 @@
 {
-   "abstract" : "Automatic Trait Loading and Resolution for\nCatalyst Components",
+   "abstract" : "Automatic Trait Loading and Resolution for Catalyst Components",
    "author" : [
       "Rafael Kitover <rkitover@cpan.org>"
    ],
@@ -74,7 +74,7 @@
          "web" : "http://github.com/rkitover/catalystx-component-traits"
       }
    },
-   "version" : "0.18",
+   "version" : "0.19",
    "x_authority" : "cpan:RKITOVER"
 }
 

@@ -1,6 +1,6 @@
 package CatalystX::Component::Traits;
 {
-  $CatalystX::Component::Traits::VERSION = '0.18';
+  $CatalystX::Component::Traits::VERSION = '0.19';
 }
 
 use namespace::autoclean;
@@ -13,8 +13,7 @@ with 'MooseX::Traits::Pluggable' => { -excludes => ['_find_trait'] };
 
 =head1 NAME
 
-CatalystX::Component::Traits - Automatic Trait Loading and Resolution for
-Catalyst Components
+CatalystX::Component::Traits - Automatic Trait Loading and Resolution for Catalyst Components
 
 =cut
 
